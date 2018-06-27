@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearTarea">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textColor="#FFFF"
+                android:textStyle="bold"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margen_del_toolbar"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tituloF"
+            android:clickable="true"
+            android:hint="Titulo"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:nextFocusForward="@id/descripcionF"/>
+
+        <EditText
+            android:id="@+id/descripcionF"
+            android:clickable="true"
+            android:hint="Descripción"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:nextFocusForward="@id/fechaF"/>
+
+        <EditText
+            android:id="@+id/fechaF"
+            android:clickable="true"
+            android:editable="false"
+            android:hint="Fecha de finalización de la tarea"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:focusable="false"
+            android:nextFocusForward="@id/horaF"
+            android:onClick="showDatePickerDialog"/>
+
+        <EditText
+            android:id="@+id/horaF"
+            android:clickable="true"
+            android:editable="false"
+            android:hint="Hora de finalización de la tarea"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:focusable="false"
+            android:onClick="showTimePickerDialog"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxCrearTarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Completar" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/margin_FAB"
+        android:layout_marginEnd="@dimen/margin_FAB"
+        android:layout_marginRight="@dimen/margin_FAB"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="bBorrarTarea"
+        android:tint="@android:color/background_light"
+        app:backgroundTint="#C31515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_delete"
+        app:fabSize="normal"/>
+
+
+</android.support.constraint.ConstraintLayout>
